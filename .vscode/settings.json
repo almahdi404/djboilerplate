@@ -1,0 +1,11 @@
+{
+    "python.pythonPath": "env\\Scripts\\python.exe",
+    "python.autoComplete.extraPaths": ["./apps/"],
+    "emmet.includeLanguages": {
+        "django-html": "html",
+    },
+    "files.exclude": {
+        "**/*.pyc": true,
+        "**/__pycache__": true,
+    },
+}
