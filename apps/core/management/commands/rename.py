@@ -5,7 +5,7 @@ from django.core.management.base import BaseCommand, CommandError
 
 
 class Command(BaseCommand):
-    help = 'Renames the Project'
+    help = "Renames the Project"
 
     def add_arguments(self, parser):
         parser.add_argument('old', nargs='+', type=str, help="current project name")
