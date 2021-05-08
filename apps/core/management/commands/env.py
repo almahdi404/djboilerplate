@@ -5,11 +5,11 @@ from django.core.management.base import BaseCommand
 
 
 class Command(BaseCommand):
-    help = 'Changes the env'
+    help = "Changes the env module"
 
     def add_arguments(self, parser):
-        parser.add_argument('old', nargs='+', type=str,
-                            help="current env name")
+        parser.add_argument(
+            'old', nargs='+', type=str, help="current env name")
         parser.add_argument('new', nargs='+', type=str, help="new env name")
 
     def handle(self, *args, **options):
