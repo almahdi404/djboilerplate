@@ -7,6 +7,7 @@ ENV
 .DS_store
 .env
 *.pyc
+*.css
 
 data.json
 media/dynamic/**/
