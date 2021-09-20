@@ -2,8 +2,8 @@ import os
 import shutil
 from django.db import connection
 from django.conf import settings
-from django.core.management.base import BaseCommand, CommandError
-from decouple import config
+from django.core.management import call_command
+from django.core.management.base import BaseCommand
 
 
 class Command(BaseCommand):
@@ -19,12 +19,11 @@ class Command(BaseCommand):
             if confirmation == "y" or confirmation == "n":
                 break
         if confirmation == "y":
-            PYTHON = config("PYTHON")
             BASE_DIR = str(settings.BASE_DIR)
 
             apps = options["apps"]
             for app in apps:
-                os.system("%s manage.py migrate %s zero" % (PYTHON, app))
+                call_command("migrate", app, "zero")
                 with connection.cursor() as cursor:
                     cursor.execute(
                         "DELETE FROM django_migrations WHERE app='%s'" % app)
