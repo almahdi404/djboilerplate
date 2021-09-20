@@ -1,8 +1,8 @@
 import os
 import shutil
-from decouple import config
 from django.conf import settings
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management import call_command
+from django.core.management.base import BaseCommand
 
 
 class Command(BaseCommand):
@@ -13,9 +13,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         appname = options["app"][0]
-        PYTHON = config("PYTHON")
         BASE_DIR = str(settings.BASE_DIR)
-        os.system("%s manage.py startapp %s" % (PYTHON, appname))
+        call_command("startapp", appname)
         oldapp = os.path.join(BASE_DIR, appname)
         newapp = os.path.join(BASE_DIR, "apps", appname)
         shutil.move(oldapp, newapp)
