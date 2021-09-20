@@ -1,5 +1,4 @@
 import os
-import sys
 import glob
 import time
 import sass
@@ -46,5 +45,6 @@ def Compiler():
                     target=compiler, args=(d,), daemon=True)
                 thread.start()
     else:
-        for d in staticFolders:
+        d = settings.STATIC_ROOT
+        if os.path.exists(d):
             sass.compile(dirname=(d, d), output_style="expanded")
