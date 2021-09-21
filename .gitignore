@@ -3,6 +3,7 @@ __pycache__
 env
 ENV
 
+db.sqlite3
 .eslintcache
 .DS_store
 .env
