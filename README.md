@@ -43,8 +43,8 @@ Follow the steps to get your app running
   - `dev.py` is used on runserver and `pro.py` on wsgi and asgi production
   - secret variables are imported from `.env` file using the `config` function
 - Apps
-  - All apps are stored in **apps** folder for structural convenient
-  - Use `python manage.py newapp appname` to create new apps inside `apps` folder
+  - All apps are stored in the [apps](apps) folder for structural convenient
+  - Use `python manage.py newapp appname` to create new apps inside the [apps](apps) folder
 - Sass
   - A compile function in `apps/core/sass.py` is called when the server is started or reloaded
   - If `DEBUG=True`, it will watch for **.scss** file changes in **static** folders and compile it, `threading` is used to accomplish this task
