@@ -4,7 +4,7 @@ A [Django](https://www.djangoproject.com/) boilerplate/template for building pro
 ## Features
 > #### Frontend
 
-- [Libsass](https://pypi.org/project/Pillow/) and [Watchdog](https://pypi.org/project/libsass/), for out of the box sass support
+- [Libsass](https://pypi.org/project/libsass/) and [Watchdog](https://pypi.org/project/watchdog/), for out of the box sass support
 
 > #### Backend
 
