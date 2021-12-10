@@ -10,6 +10,6 @@ db.sqlite3
 *.pyc
 *.css
 
-data.json
-media/dynamic/**/
 assets
+fixures
+media/dynamic/**/
