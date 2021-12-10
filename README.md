@@ -30,6 +30,7 @@ Follow the steps to get your app running
   - Install the requirements : `pip install -r requirements.txt`
 - Now change the project name : `python mangae.py rename djboilerplate projectname`
 - Duplicate the `.env.example` file and rename the new file to `.env`
+- Inside the `.env` file, set `ENV=dev` for development or `ENV=pro` for production
 - Generate a random **secretkey** : `python mangae.py genskey`, copy it
 - Inside the `.env` file, set it as the `SECRET_KEY` value
 - Start the server : `python manage.py runserver`
