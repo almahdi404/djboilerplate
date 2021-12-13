@@ -47,7 +47,7 @@ Follow the steps to get your app running
   - All apps are stored in the [apps](apps) folder for structural convenient
   - Use `python manage.py newapp appname` to create new apps inside the [apps](apps) folder
 - Sass
-  - A compile function in `apps/core/sass.py` is called when the server is started or reloaded
+  - A compiler function in `apps/core/sass.py` is called when the server is started or reloaded
   - If `DEBUG=True`, it will watch for **.scss** file changes in **static** folders and compile it, `threading` is used to accomplish this task
   - If `DEBUG=False`, then it will compile all **.scss** files in `STATIC_ROOT`  once
 
