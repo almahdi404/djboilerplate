@@ -9,13 +9,13 @@ from watchdog.observers import Observer
 from watchdog.events import FileModifiedEvent
 
 
-def Compiler():
+def compiler():
     BASE_DIR = str(settings.BASE_DIR)
     staticFolders = glob.glob(os.path.join(BASE_DIR, "apps", "**", "static"))
     staticFolders += settings.STATICFILES_DIRS
 
     if settings.DEBUG:
-        def compiler(path):
+        def compile(path):
             class Event(FileModifiedEvent):
                 def dispatch(self, event):
                     filename, extension = os.path.splitext(event.src_path)
@@ -42,7 +42,7 @@ def Compiler():
             if os.path.isdir(d):
                 sass.compile(dirname=(d, d), output_style="expanded")
                 thread = threading.Thread(
-                    target=compiler, args=(d,), daemon=True)
+                    target=compile, args=(d,), daemon=True)
                 thread.start()
     else:
         d = settings.STATIC_ROOT
