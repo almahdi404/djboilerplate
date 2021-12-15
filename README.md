@@ -21,7 +21,7 @@ Follow the steps to get your app running
 - Make sure you have **Python 3.9** installed
 - Install the backend **requirements** with **virtual environment** :
 
-  - Install the `virtualenv` package if don't have :  `pip install virtualenv`
+  - Install the [virtualenv](https://pypi.org/project/virtualenv/) package if don't have :  `pip install virtualenv`
 
   - Create a virtual environment named **env** : `virtualenv env`
 
