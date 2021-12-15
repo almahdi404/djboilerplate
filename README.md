@@ -42,7 +42,7 @@ Follow the steps to get your app running
   - the settings module is divided into `base.py` , `dev.py` , `pro.py`
   - both `dev.py`, `pro.py` extends the `base.py`
   - `dev.py` is used on runserver and `pro.py` on wsgi and asgi production
-  - secret variables are imported from `.env` file using the `config` function
+  - secret variables are imported from `.env` file using the `decouple.config` function
 - Apps
   - All apps are stored in the [apps](apps) folder for structural convenient
   - Use `python manage.py newapp appname` to create new apps inside the [apps](apps) folder
