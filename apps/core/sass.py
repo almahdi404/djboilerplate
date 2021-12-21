@@ -11,8 +11,9 @@ from watchdog.events import FileModifiedEvent
 
 def compiler():
     BASE_DIR = str(settings.BASE_DIR)
-    staticFolders = glob.glob(os.path.join(BASE_DIR, "apps", "**", "static"))
-    staticFolders += settings.STATICFILES_DIRS
+    staticFolders = settings.STATICFILES_DIRS
+    staticFolders += glob.glob(os.path.join(BASE_DIR, "**", "static"))
+    staticFolders += glob.glob(os.path.join(BASE_DIR, "apps", "**", "static"))
 
     if settings.DEBUG:
         def compile(path):
