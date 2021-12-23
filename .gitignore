@@ -11,5 +11,5 @@ db.sqlite3
 *.css
 
 assets
-fixures
+fixtures
 media/dynamic/**/
