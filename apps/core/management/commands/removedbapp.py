@@ -14,8 +14,11 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         while True:
-            confirmation = str(input(
-                "Warning: Are you sure you want to remove the Migrations and Tables (y/n)? "))
+            confirmation = str(
+                input(
+                    "Warning: Are you sure you want to remove the Migrations and Tables (y/n)? "
+                )
+            )
             if confirmation == "y" or confirmation == "n":
                 break
         if confirmation == "y":
@@ -25,8 +28,7 @@ class Command(BaseCommand):
             for app in apps:
                 call_command("migrate", app, "zero")
                 with connection.cursor() as cursor:
-                    cursor.execute(
-                        "DELETE FROM django_migrations WHERE app='%s'" % app)
+                    cursor.execute("DELETE FROM django_migrations WHERE app='%s'" % app)
                 migration = os.path.join(BASE_DIR, "apps", app, 'migrations')
                 if os.path.isdir(migration):
                     shutil.rmtree(migration)

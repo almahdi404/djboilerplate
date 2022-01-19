@@ -12,8 +12,11 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         while True:
-            confirmation = str(input(
-                "Warning: Are you sure you want to reset the Migrations and Database (y/n)? "))
+            confirmation = str(
+                input(
+                    "Warning: Are you sure you want to reset the Migrations and Database (y/n)? "
+                )
+            )
             if confirmation == "y" or confirmation == "n":
                 break
         if confirmation == "y":
@@ -23,8 +26,7 @@ class Command(BaseCommand):
                 cursor.execute("CREATE DATABASE %s" % dbname)
 
             BASE_DIR = str(settings.BASE_DIR)
-            migrations = glob.glob(os.path.join(
-                BASE_DIR, "apps", "**", "migrations"))
+            migrations = glob.glob(os.path.join(BASE_DIR, "apps", "**", "migrations"))
 
             for migration in migrations:
                 if os.path.isdir(migration):

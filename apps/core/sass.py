@@ -16,6 +16,7 @@ def compiler():
     staticFolders += glob.glob(os.path.join(BASE_DIR, "apps", "**", "static"))
 
     if settings.DEBUG:
+
         def compile(path):
             class Event(FileModifiedEvent):
                 def dispatch(self, event):
@@ -25,9 +26,11 @@ def compiler():
                         time.sleep(0.1)
                         sass.compile(dirname=(d, d), output_style="expanded")
 
-            logging.basicConfig(level=logging.INFO,
-                                format='%(asctime)s - %(message)s',
-                                datefmt='%Y-%m-%d %H:%M:%S')
+            logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s - %(message)s',
+                datefmt='%Y-%m-%d %H:%M:%S',
+            )
             event_handler = Event(path)
             observer = Observer()
             observer.schedule(event_handler, path, recursive=True)
@@ -42,8 +45,7 @@ def compiler():
         for d in staticFolders:
             if os.path.isdir(d):
                 sass.compile(dirname=(d, d), output_style="expanded")
-                thread = threading.Thread(
-                    target=compile, args=(d,), daemon=True)
+                thread = threading.Thread(target=compile, args=(d,), daemon=True)
                 thread.start()
     else:
         d = settings.STATIC_ROOT
