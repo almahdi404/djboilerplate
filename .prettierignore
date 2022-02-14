@@ -2,3 +2,4 @@ env
 assets
 
 *.html
+*.md
