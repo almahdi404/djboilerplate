@@ -1,5 +1,5 @@
 Django==3.2.12
 libsass==0.21.0
-Pillow==8.0.0
-python-decouple==3.3
-watchdog==2.1.3
+Pillow==9.0.1
+python-decouple==3.6
+watchdog==2.1.6
