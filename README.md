@@ -41,7 +41,7 @@ Follow the steps to get your app running
 
 - Inside the `.env` file, set `ENV=dev` for development or `ENV=pro` for production
 
-- Generate a random **secretkey** : `python mangae.py genskey`, copy it
+- Then generate a random **secretkey** : Go to [Djecrety](https://djecrety.ir/), generate and copy
 
 - Inside the `.env` file, set it as the `SECRET_KEY` value
 
