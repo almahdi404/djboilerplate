@@ -1,14 +1,16 @@
 {
-    "python.defaultInterpreterPath": "./env/Scripts/python.exe",
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": [
-        "-S"
-    ],
-    "python.analysis.extraPaths": [
-        "./apps/"
-    ],
-    "files.exclude": {
-        "**/*.pyc": true,
-        "**/__pycache__": true,
-    },
+  "python.defaultInterpreterPath": "./env/Scripts/python.exe",
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["-S"],
+  "python.analysis.extraPaths": ["./apps/"],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript][javascriptreact][scss][json][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.exclude": {
+    "**/*.pyc": true,
+    "**/__pycache__": true
+  }
 }
