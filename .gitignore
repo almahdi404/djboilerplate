@@ -1,13 +1,12 @@
-node_modules
-__pycache__
 env
-ENV
+__pycache__
 
 db.sqlite3
 .eslintcache
 .DS_store
 .env
 *.pyc
+*.py.*
 *.css
 
 assets
