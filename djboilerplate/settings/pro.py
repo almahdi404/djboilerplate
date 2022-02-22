@@ -23,7 +23,7 @@ DATABASES = {
         'PORT': config("DB_PORT"),
         'OPTIONS': {
             'sql_mode': 'traditional',
-        }
+        },
     }
 }
 
