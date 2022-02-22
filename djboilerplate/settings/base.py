@@ -68,7 +68,6 @@ TEMPLATES = [
     },
 ]
 
-
 WSGI_APPLICATION = 'djboilerplate.wsgi.application'
 ASGI_APPLICATION = 'djboilerplate.asgi.application'
 
