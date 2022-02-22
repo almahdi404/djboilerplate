@@ -52,17 +52,17 @@ Follow the steps to get your app running
 ## How it works
 
 - Settings
-  - the settings module is divided into `base.py` , `dev.py` , `pro.py`
-  - both `dev.py`, `pro.py` extends the `base.py`
+  - the settings module is divided into `base.py` , `dev.py` , `pro.py` files
+  - both `dev.py` and `pro.py` extends the `base.py` file
   - `dev.py` is used on runserver and `pro.py` on wsgi and asgi production
   - secret variables are imported from `.env` file using the `decouple.config` function
 - Apps
-  - All apps are stored in the [apps](apps) folder for structural convenient
-  - Use `python manage.py newapp appname` to create new apps inside the [apps](apps) folder
+  - all apps are stored in the [apps](apps) folder for structural convenient
+  - use `python manage.py newapp appname` to create new apps inside the [apps](apps) folder
 - Sass
-  - A compiler function in `apps/core/sass.py` is called when the server is started or reloaded
-  - If `DEBUG=True`, it will watch for **.scss** file changes in **static** folders and compile it, `threading` is used to accomplish this task
-  - If `DEBUG=False`, then it will compile all **.scss** files in `STATIC_ROOT` once
+  - a compiler function in `apps/core/sass.py` is called when the server is started or reloaded
+  - when `DEBUG=True`, it will watch for **.scss** file changes in **static** folders and compile it, `threading` is used to accomplish this task
+  - when `DEBUG=False`, then it will compile all **.scss** files in `STATIC_ROOT` once
 
 ## Contribute
 
