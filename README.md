@@ -19,7 +19,7 @@ Follow the steps to get your app running
 
 - `git clone https://github.com/devmahdi404/djboilerplate`
 
-- Rename the `djboilerplate` folder name with your new project name
+- Rename the `djboilerplate` folder name with your new projectname
 
 - `cd` into the project folder
 
