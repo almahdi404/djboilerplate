@@ -1,36 +1,52 @@
 import os
-import glob
 import time
+import site
 import sass
-import logging
 import threading
+from pathlib import Path
+from django.apps import apps
 from django.conf import settings
 from watchdog.observers import Observer
-from watchdog.events import FileModifiedEvent
+from watchdog.events import FileClosedEvent
 
 
 def compiler():
-    BASE_DIR = str(settings.BASE_DIR)
-    staticFolders = settings.STATICFILES_DIRS
-    staticFolders += glob.glob(os.path.join(BASE_DIR, "**", "static"))
-    staticFolders += glob.glob(os.path.join(BASE_DIR, "apps", "**", "static"))
+    packageFolders = [
+        site.getusersitepackages(),
+        *[path for path in site.getsitepackages()],
+    ]
+
+    staticFolders = settings.STATICFILES_DIRS.copy()
+    staticFolders += [
+        os.path.join(app.path, "static") for app in apps.get_app_configs()
+    ]
+
+    compileFolders = staticFolders.copy()
+    for staticFolder in staticFolders:
+        for packageFolder in packageFolders:
+            if Path(staticFolder).is_relative_to(packageFolder):
+                if staticFolder in compileFolders:
+                    compileFolders.remove(staticFolder)
 
     if settings.DEBUG:
 
-        def compile(path):
-            class Event(FileModifiedEvent):
+        def watcher(path):
+            class Event(FileClosedEvent):
                 def dispatch(self, event):
                     filename, extension = os.path.splitext(event.src_path)
                     if extension == ".scss":
-                        d = os.path.dirname(event.src_path)
-                        time.sleep(0.1)
-                        sass.compile(dirname=(d, d), output_style="expanded")
+                        time.sleep(0.5)
+                        for d in compileFolders:
+                            if os.path.isdir(d):
+                                try:
+                                    sass.compile(
+                                        dirname=(d, d),
+                                        output_style="expanded",
+                                        include_paths=staticFolders,
+                                    )
+                                except sass.CompileError as error:
+                                    print(error)
 
-            logging.basicConfig(
-                level=logging.INFO,
-                format='%(asctime)s - %(message)s',
-                datefmt='%Y-%m-%d %H:%M:%S',
-            )
             event_handler = Event(path)
             observer = Observer()
             observer.schedule(event_handler, path, recursive=True)
@@ -42,12 +58,26 @@ def compiler():
                 observer.stop()
             observer.join()
 
-        for d in staticFolders:
+        for d in compileFolders:
             if os.path.isdir(d):
-                sass.compile(dirname=(d, d), output_style="expanded")
-                thread = threading.Thread(target=compile, args=(d,), daemon=True)
+                try:
+                    sass.compile(
+                        dirname=(d, d),
+                        output_style="expanded",
+                        include_paths=staticFolders,
+                    )
+                except sass.CompileError as error:
+                    print(error)
+                thread = threading.Thread(target=watcher, args=(d,), daemon=True)
                 thread.start()
     else:
         d = settings.STATIC_ROOT
         if os.path.exists(d):
-            sass.compile(dirname=(d, d), output_style="expanded")
+            try:
+                sass.compile(
+                    dirname=(d, d),
+                    output_style="expanded",
+                    include_paths=staticFolders,
+                )
+            except sass.CompileError as error:
+                print(error)
