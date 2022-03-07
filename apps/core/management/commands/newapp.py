@@ -9,7 +9,7 @@ class Command(BaseCommand):
     help = "Creates a new app in apps folder"
 
     def add_arguments(self, parser):
-        parser.add_argument('app', nargs='+', type=str, help="new app name")
+        parser.add_argument("app", nargs="+", type=str, help="new app name")
 
     def handle(self, *args, **options):
         appname = options["app"][0]

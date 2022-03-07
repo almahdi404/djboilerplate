@@ -10,7 +10,7 @@ class Command(BaseCommand):
     help = "Removes apps migrations and tables"
 
     def add_arguments(self, parser):
-        parser.add_argument('apps', nargs='+', type=str, help="apps name")
+        parser.add_argument("apps", nargs="+", type=str, help="apps name")
 
     def handle(self, *args, **options):
         while True:
@@ -29,7 +29,7 @@ class Command(BaseCommand):
                 call_command("migrate", app, "zero")
                 with connection.cursor() as cursor:
                     cursor.execute("DELETE FROM django_migrations WHERE app='%s'" % app)
-                migration = os.path.join(BASE_DIR, "apps", app, 'migrations')
+                migration = os.path.join(BASE_DIR, "apps", app, "migrations")
                 if os.path.isdir(migration):
                     shutil.rmtree(migration)
 

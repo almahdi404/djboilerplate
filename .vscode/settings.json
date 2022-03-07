@@ -1,7 +1,6 @@
 {
   "python.defaultInterpreterPath": "./env/Scripts/python.exe",
   "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["-S"],
   "python.analysis.extraPaths": ["./apps/"],
   "[css][scss][javascript][javascriptreact][json][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
