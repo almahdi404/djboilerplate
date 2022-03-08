@@ -6,8 +6,6 @@ import threading
 from pathlib import Path
 from django.apps import apps
 from django.conf import settings
-from watchdog.observers import Observer
-from watchdog.events import FileClosedEvent
 
 
 def compiler():
@@ -29,6 +27,8 @@ def compiler():
                     compileFolders.remove(staticFolder)
 
     if settings.DEBUG:
+        from watchdog.observers import Observer
+        from watchdog.events import FileClosedEvent
 
         def watcher(path):
             class Event(FileClosedEvent):
