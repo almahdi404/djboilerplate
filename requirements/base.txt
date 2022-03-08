@@ -1,6 +1,4 @@
-black==22.1.0
 Django==4.0.3
 libsass==0.21.0
 Pillow==9.0.1
 python-decouple==3.6
-watchdog==2.1.6
