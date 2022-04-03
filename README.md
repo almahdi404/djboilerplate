@@ -68,10 +68,6 @@ Follow the steps to get your app running
 
 If you wish to contribute to this project, please first discuss the change you wish to make via an [issue](https://github.com/devmahdi404/djboilerplate/issues).
 
-## Donate
-
-[Bkash](https://www.bkash.com/) : `01712143778`
-
 ## License
 
 [MIT License](LICENSE)
