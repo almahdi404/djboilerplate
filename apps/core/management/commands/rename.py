@@ -16,13 +16,12 @@ class Command(BaseCommand):
         new = options["new"][0]
 
         BASE_DIR = str(settings.BASE_DIR)
-        projectfiles = []
-        projectfiles.append(os.path.join(BASE_DIR, "manage.py"))
-        projectfiles += glob.glob(os.path.join(BASE_DIR, old, "*.json"))
-        projectfiles += glob.glob(os.path.join(BASE_DIR, old, "*.py"))
-        projectfiles += glob.glob(os.path.join(BASE_DIR, old, "**\*.py"))
+        pythonfiles = []
+        pythonfiles.append(os.path.join(BASE_DIR, "manage.py"))
+        pythonfiles += glob.glob(os.path.join(BASE_DIR, old, "*.py"))
+        pythonfiles += glob.glob(os.path.join(BASE_DIR, old, "**\*.py"))
 
-        for pythonfile in projectfiles:
+        for pythonfile in pythonfiles:
             with open(pythonfile, "r") as f:
                 filedata = f.read()
 
@@ -30,4 +29,14 @@ class Command(BaseCommand):
 
             with open(pythonfile, "w") as f:
                 f.write(filedata)
+
+        for jsonfile in glob.glob(os.path.join(BASE_DIR, "*.json")):
+            with open(jsonfile, "r") as f:
+                filedata = f.read()
+
+            filedata = filedata.replace('"%s"' % old, '"%s"' % new)
+
+            with open(jsonfile, "w") as f:
+                f.write(filedata)
+
         os.rename(os.path.join(BASE_DIR, old), os.path.join(BASE_DIR, new))
