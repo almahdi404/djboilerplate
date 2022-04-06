@@ -1,0 +1,9 @@
+{
+  "name": "djboilerplate",
+  "scripts": {
+    "format": "prettier . -w"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
+}
