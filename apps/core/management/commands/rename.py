@@ -18,6 +18,7 @@ class Command(BaseCommand):
         BASE_DIR = str(settings.BASE_DIR)
         projectfiles = []
         projectfiles.append(os.path.join(BASE_DIR, "manage.py"))
+        projectfiles += glob.glob(os.path.join(BASE_DIR, old, "*.json"))
         projectfiles += glob.glob(os.path.join(BASE_DIR, old, "*.py"))
         projectfiles += glob.glob(os.path.join(BASE_DIR, old, "**\*.py"))
 
