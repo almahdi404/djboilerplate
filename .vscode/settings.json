@@ -2,14 +2,13 @@
   "python.defaultInterpreterPath": "./env/Scripts/python.exe",
   "python.formatting.provider": "black",
   "python.analysis.extraPaths": ["./apps/"],
-  "[htm][html]": {
+  "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[css][scss][javascript][javascriptreact][typescript][typescriptreact][json][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.exclude": {
-    "**/*.pyc": true,
     "**/__pycache__": true
   }
 }
