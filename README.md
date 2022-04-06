@@ -26,13 +26,13 @@ Follow the steps to get your app running
 - Make sure you have **Python 3.9** installed
 
 - Install the backend **requirements** with **virtual environment** :
-  
+
   - Install the [virtualenv](https://pypi.org/project/virtualenv/) package if don't have : `pip install virtualenv`
-  
+
   - Create a virtual environment named **env** : `virtualenv env`
-  
+
   - Activate the virtual environment : `env/Scripts/activate`
-  
+
   - Install the requirements : `pip install -r requirements.txt`
 
 - Now change the project name : `python mangae.py rename djboilerplate projectname`
