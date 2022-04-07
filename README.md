@@ -1,5 +1,8 @@
 # Dj Boilerplate
 
+![VSCode](https://img.shields.io/static/v1?logo=visual-studio-code&label=&message=vscode&color=0066b8)
+![GitHub](https://img.shields.io/github/license/devmahdi404/code-django)
+
 A [Django](https://www.djangoproject.com/) boilerplate/template for building production level projects
 
 ## Features
