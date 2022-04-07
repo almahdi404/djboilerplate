@@ -1,15 +1,23 @@
+# nodejs/javascript
 node_modules
-env
-__pycache__
-
-db.sqlite3
 .eslintcache
-.DS_store
-.env
-*.pyc
-*.py.*
-*.css
 
+# python
+env
+ENV
+venv
+VENV
+__pycache__
+*.py.*
+
+# django
 assets
 fixtures
 media/dynamic/**/
+db.sqlite3
+*.mo
+*.css
+
+# other
+.env
+.DS_store
