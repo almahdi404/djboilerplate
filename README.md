@@ -7,11 +7,11 @@ A [Django](https://www.djangoproject.com/) boilerplate/template for building pro
 
 ## Features
 
-> #### Frontend
+> Frontend
 
 - [Libsass](https://pypi.org/project/libsass/) and [Watchdog](https://pypi.org/project/watchdog/), for out of the box sass support
 
-> #### Backend
+> Backend
 
 - [Decouple](https://pypi.org/project/python-decouple/), for securely storing secret variables in **.env** file
 - [Pillow](https://pypi.org/project/Pillow/), for uploading images
