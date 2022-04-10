@@ -8,7 +8,7 @@ ENV
 venv
 VENV
 __pycache__
-*.py.*
+*.py.*.tmp
 
 # django
 assets
