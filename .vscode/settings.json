@@ -1,5 +1,4 @@
 {
-  "python.defaultInterpreterPath": "./env/Scripts/python.exe",
   "python.formatting.provider": "black",
   "python.analysis.extraPaths": ["./apps/"],
   "[html][django-html]": {
