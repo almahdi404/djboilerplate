@@ -1,2 +1,2 @@
 [tool.black]
-exclude = "/(env|.*/migrations)/"
+exclude = "/(env|.*/migrations|.*/node_modules)/"
