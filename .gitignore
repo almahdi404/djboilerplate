@@ -8,16 +8,16 @@ ENV
 venv
 VENV
 __pycache__
-*.py.*.tmp
 
 # django
 assets
 fixtures
 media/dynamic/**/
 db.sqlite3
+.env
 *.mo
 *.css
 
 # other
-.env
 .DS_store
+*.tmp
