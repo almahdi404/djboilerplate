@@ -1,5 +1,6 @@
 # Dj Boilerplate
 
+![Black](https://img.shields.io/badge/code%20style-black-000000.svg)
 ![VSCode](https://img.shields.io/static/v1?logo=visual-studio-code&label=&message=vscode&color=0066b8)
 ![GitHub](https://img.shields.io/github/license/devmahdi404/code-django)
 
@@ -55,9 +56,9 @@ Follow the steps to get your app running
 ## How it works
 
 -   Settings
-    -   the settings module is divided into `base.py` , `dev.py` , `pro.py` files
-    -   both `dev.py` and `pro.py` extends the `base.py` file
-    -   `dev.py` is used on runserver and `pro.py` on wsgi and asgi production
+    -   the settings module is divided into `base.py` , `dev.py` , `pro.py` files, both `dev.py` and `pro.py` extends the `base.py` file
+    -   when using `python manage.py runserver`, `dev.py` is used if `ENV=dev` and `pro.py` is used if `ENV=pro`
+    -   `pro.py` is always used in `wsgi` and `asgi` application
     -   secret variables are imported from `.env` file using the `decouple.config` function
 -   Apps
     -   all apps are stored in the [apps](apps) folder for structural convenient
