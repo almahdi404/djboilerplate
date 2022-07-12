@@ -56,7 +56,7 @@ Follow the steps to get your app running
 ## How it works
 
 -   Settings
-    -   the settings module is divided into `base.py` , `dev.py` , `pro.py` files, both `dev.py` and `pro.py` extends the `base.py` file
+    -   the settings module is divided into `base.py` , `dev.py` , `pro.py` files. both `dev.py` and `pro.py` extends the `base.py` file
     -   when using `python manage.py runserver`, `dev.py` is used if `ENV=dev` and `pro.py` is used if `ENV=pro`
     -   `pro.py` is always used in `wsgi` and `asgi` application
     -   secret variables are imported from `.env` file using the `decouple.config` function
