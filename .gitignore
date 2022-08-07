@@ -4,9 +4,6 @@ node_modules
 
 # python
 env
-ENV
-venv
-VENV
 __pycache__
 
 # django
