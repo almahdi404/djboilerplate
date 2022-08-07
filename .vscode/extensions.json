@@ -1,3 +1,7 @@
 {
-  "recommendations": ["almahdi.code-django", "editorconfig.editorconfig"]
+  "recommendations": [
+    "almahdi.code-django",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode"
+  ]
 }
