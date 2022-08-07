@@ -2,7 +2,7 @@
 
 ![Black](https://img.shields.io/badge/code%20style-black-000000.svg)
 ![VSCode](https://img.shields.io/static/v1?logo=visual-studio-code&label=&message=vscode&color=0066b8)
-![GitHub](https://img.shields.io/github/license/devmahdi404/code-django)
+![GitHub](https://img.shields.io/github/license/almahdi404/code-django)
 
 A [Django](https://www.djangoproject.com/) boilerplate/template for building production level projects
 
@@ -21,7 +21,7 @@ A [Django](https://www.djangoproject.com/) boilerplate/template for building pro
 
 Follow the steps to get your app running
 
--   `git clone https://github.com/devmahdi404/djboilerplate`
+-   `git clone https://github.com/almahdi404/djboilerplate`
 
 -   Rename the `djboilerplate` folder name with your new projectname
 
@@ -70,7 +70,7 @@ Follow the steps to get your app running
 
 ## Contribute
 
-If you wish to contribute to this project, please first discuss the change you wish to make via an [issue](https://github.com/devmahdi404/djboilerplate/issues).
+If you wish to contribute to this project, please first discuss the change you wish to make via an [issue](https://github.com/almahdi404/djboilerplate/issues).
 
 ## License
 
