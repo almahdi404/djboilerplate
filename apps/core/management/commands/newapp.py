@@ -1,4 +1,3 @@
-import os
 import shutil
 from django.conf import settings
 from django.core.management import call_command
@@ -13,8 +12,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         appname = options["app"][0]
-        BASE_DIR = str(settings.BASE_DIR)
+        BASE_DIR = settings.BASE_DIR
         call_command("startapp", appname)
-        oldapp = os.path.join(BASE_DIR, appname)
-        newapp = os.path.join(BASE_DIR, "apps", appname)
+        oldapp = BASE_DIR / appname
+        newapp = BASE_DIR / "apps" / appname
         shutil.move(oldapp, newapp)
