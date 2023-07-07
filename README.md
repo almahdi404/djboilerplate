@@ -23,7 +23,7 @@ Follow the steps to get your app running
 
 -   `git clone https://github.com/almahdi404/djboilerplate`
 
--   Rename the `djboilerplate` folder name with your new projectname
+-   Rename the `djboilerplate` folder name with your new **project name**
 
 -   `cd` into the project folder
 
@@ -38,8 +38,6 @@ Follow the steps to get your app running
     -   Activate the virtual environment : `env/Scripts/activate`
 
     -   Install the requirements : `pip install -r requirements.txt`
-
--   Now change the project name : `python mangae.py rename djboilerplate projectname`
 
 -   Duplicate the `.env.example` file and rename the new file to `.env`
 

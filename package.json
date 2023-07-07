@@ -1,5 +1,4 @@
 {
-  "name": "djboilerplate",
   "scripts": {
     "format": "prettier . -w"
   },
