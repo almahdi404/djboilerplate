@@ -1,2 +1,8 @@
 [tool.black]
 exclude = "/(env|.*/node_modules)/"
+
+[tool.isort]
+profile = "black"
+sections = ["STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+known_first_party = ["core"]
+skip_glob = ["env/*", "node_modules/*", "*/migrations/*"]

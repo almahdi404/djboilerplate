@@ -1,9 +1,10 @@
 import os
-import time
 import site
-import sass
 import threading
+import time
 from pathlib import Path
+
+import sass
 from django.apps import apps
 from django.conf import settings
 
@@ -27,8 +28,8 @@ def compiler():
                     compileFolders.remove(staticFolder)
 
     if settings.DEBUG:
-        from watchdog.observers import Observer
         from watchdog.events import FileClosedEvent
+        from watchdog.observers import Observer
 
         def watcher(path):
             class Event(FileClosedEvent):
