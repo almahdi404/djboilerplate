@@ -4,7 +4,7 @@ repos:
     hooks:
       - id: trailing-whitespace
   - repo: https://github.com/psf/black
-    rev: 23.3.0
+    rev: 23.7.0
     hooks:
       - id: black
   - repo: https://github.com/pycqa/isort
@@ -12,6 +12,6 @@ repos:
     hooks:
       - id: isort
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.0.0
+    rev: v3.0.1
     hooks:
       - id: prettier
