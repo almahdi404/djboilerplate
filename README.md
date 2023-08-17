@@ -27,8 +27,6 @@ Follow the steps to get your app running
 
 -   `cd` into the project folder
 
--   Make sure you have **Python 3.9** installed
-
 -   Install the backend **requirements** with **virtual environment** :
 
     -   Install the [virtualenv](https://pypi.org/project/virtualenv/) package if don't have : `pip install virtualenv`
