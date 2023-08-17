@@ -27,6 +27,12 @@ Follow the steps to get your app running
 
 -   `cd` into the project folder
 
+-   On **Linux/Mac** :
+
+    -   Run : `bash setup.sh`
+
+    -   Activate the virtual environment : `source env/bin/activate`
+
 -   On **Windows** :
 
     -   Create a virtual environment named **env** : `python -m venv env`
