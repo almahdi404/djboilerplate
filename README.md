@@ -27,27 +27,25 @@ Follow the steps to get your app running
 
 -   `cd` into the project folder
 
--   Install the backend **requirements** with **virtual environment** :
+-   On **Windows** :
 
-    -   Install the [virtualenv](https://pypi.org/project/virtualenv/) package if don't have : `pip install virtualenv`
-
-    -   Create a virtual environment named **env** : `virtualenv env`
+    -   Create a virtual environment named **env** : `python -m venv env`
 
     -   Activate the virtual environment : `env/Scripts/activate`
 
-    -   Install the requirements : `pip install -r requirements.txt`
+    -   Install the dev requirements : `pip install -r requirements/dev.txt`
 
--   Duplicate the `.env.example` file and rename the new file to `.env`
+    -   Duplicate the `.env.example` file and rename the new file to `.env`
 
--   Inside the `.env` file, set `ENV=dev` for development or `ENV=pro` for production
+    -   Inside the `.env` file, set `ENV=dev`
 
--   Generate a random **SECRET_KEY** : `python manage.py genskey`, copy it
+    -   Generate a random **SECRET_KEY** : `python manage.py genskey`, copy it
 
--   Inside the `.env` file, set it as the `SECRET_KEY` value
+    -   Inside the `.env` file, set it as the `SECRET_KEY` value
 
 -   Start the server : `python manage.py runserver`
 
--   Open a browser and go to `http://localhost:8000` to see the project running
+-   Go to [localhost:8000](http://localhost:8000) to see your project running
 
 ## How it works
 
