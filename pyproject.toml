@@ -1,8 +1,15 @@
-[tool.black]
-exclude = "/(env|.*/node_modules)/"
+[tool.ruff]
+select = ["E4", "E7", "E9", "UP", "F", "I"]
+fix = true
+fixable = ["I"]
+exclude = ["env", "node_modules"]
 
-[tool.isort]
-profile = "black"
-sections = ["STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
-known_first_party = ["core"]
-skip_glob = ["env/*", "node_modules/*", "*/migrations/*"]
+[tool.ruff.lint.isort]
+section-order = [
+  "future",
+  "standard-library",
+  "third-party",
+  "first-party",
+  "local-folder",
+]
+known-first-party = ["core"]

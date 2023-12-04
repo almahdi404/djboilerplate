@@ -1,10 +1,7 @@
 {
   "python.analysis.extraPaths": ["./apps/"],
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    }
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "[html][django-html]": {
     "editor.defaultFormatter": "vscode.html-language-features"

@@ -1,9 +1,8 @@
 {
   "recommendations": [
     "almahdi.code-django",
+    "charliermarsh.ruff",
     "editorconfig.editorconfig",
-    "esbenp.prettier-vscode",
-    "ms-python.black-formatter",
-    "ms-python.isort"
+    "esbenp.prettier-vscode"
   ]
 }
