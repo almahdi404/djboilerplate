@@ -28,27 +28,28 @@ def compiler():
                     compileFolders.remove(staticFolder)
 
     if settings.DEBUG:
-        from watchdog.events import FileClosedEvent
+        from watchdog.events import FileSystemEvent, FileSystemEventHandler
         from watchdog.observers import Observer
 
         def watcher(path):
-            class Event(FileClosedEvent):
-                def dispatch(self, event):
-                    filename, extension = os.path.splitext(event.src_path)
-                    if extension == ".scss":
-                        time.sleep(0.5)
-                        for d in compileFolders:
-                            if os.path.isdir(d):
-                                try:
-                                    sass.compile(
-                                        dirname=(d, d),
-                                        output_style="expanded",
-                                        include_paths=staticFolders,
-                                    )
-                                except sass.CompileError as error:
-                                    print(error)
+            class EventHandler(FileSystemEventHandler):
+                def dispatch(self, event: FileSystemEvent):
+                    if event.event_type == "closed":
+                        filename, extension = os.path.splitext(event.src_path)
+                        if extension == ".scss":
+                            time.sleep(0.5)
+                            for d in compileFolders:
+                                if os.path.isdir(d):
+                                    try:
+                                        sass.compile(
+                                            dirname=(d, d),
+                                            output_style="expanded",
+                                            include_paths=staticFolders,
+                                        )
+                                    except sass.CompileError as error:
+                                        print(error)
 
-            event_handler = Event(path)
+            event_handler = EventHandler()
             observer = Observer()
             observer.schedule(event_handler, path, recursive=True)
             observer.start()
